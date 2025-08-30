@@ -19,7 +19,7 @@ export default function PropertyDashboard() {
     useEffect(() => {
         async function renderProperties() {
             try {
-                const res = await axios.get('http://localhost:3000/api/properties/render');
+                const res = await axios.get('https://assignment01-gilt.vercel.app/api/properties/render');
                 const propertiesData = res.data || [];
                 setProperties(propertiesData);
                 console.log(propertiesData);
@@ -47,7 +47,7 @@ export default function PropertyDashboard() {
         
 
         try {
-            const res = await axios.post('http://localhost:3000/api/properties', {
+            const res = await axios.post('https://assignment01-gilt.vercel.app/api/properties', {
                 title: title,
                 type,
                 location,
@@ -56,7 +56,7 @@ export default function PropertyDashboard() {
                 URL:image,
             });
 
-            const updatedRes = await axios.get('http://localhost:3000/api/properties/render');
+            const updatedRes = await axios.get('https://assignment01-gilt.vercel.app/api/properties/render');
             const propertiesData = updatedRes.data || [];
             setProperties(propertiesData);
             setFilteredProperties(propertiesData);
